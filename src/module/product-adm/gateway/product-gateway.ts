@@ -3,5 +3,5 @@ import { Product } from "../domain/product";
 
 export interface ProductGateway {
     add(product: Product): Promise<void>
-    find(id: Id): Promise<Product | null>
+    find(id: Id): Promise<Product>
 }
