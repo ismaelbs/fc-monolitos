@@ -4,7 +4,8 @@ import { ProductModel } from "../../../../src/module/product-adm/repository/prod
 import { Product } from "../../../../src/module/product-adm/domain/product";
 import { ProductRepository } from "../../../../src/module/product-adm/repository/product-repository";
 import { Id } from "../../../../src/module/@shared/value-objects/Id";
-let sequelize;
+import { afterEach } from "node:test";
+let sequelize: Sequelize;
 
 describe('Product Repository', () => {
     beforeEach(async () => {
@@ -64,5 +65,9 @@ describe('Product Repository', () => {
         expect(productProps.description).toEqual(foundProduct?.description);
         expect(productProps.purchasePrice).toEqual(foundProduct?.purchasePrice);
         expect(productProps.stock).toEqual(foundProduct?.stock);
+    })
+
+    afterEach(async () => {
+        await sequelize.close();
     })
 });
