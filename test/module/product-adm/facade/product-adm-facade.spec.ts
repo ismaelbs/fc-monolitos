@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it } from "vitest";
 import { ProductRepository } from "../../../../src/module/product-adm/repository/product-repository";
 import { ProductAdmFacade } from "../../../../src/module/product-adm/facade/product-adm-facade";
-import { AddProductUseCase } from "../../../../src/module/product-adm/usecases/add-product-usecase";
+import { AddProductUseCase } from "../../../../src/module/product-adm/usecases/add-products/add-product-usecase";
 import { ProductModel } from "../../../../src/module/product-adm/repository/product.model";
 import { Id } from "../../../../src/module/@shared/value-objects/Id";
 import { Sequelize } from "sequelize-typescript";
