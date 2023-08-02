@@ -1,4 +1,4 @@
-export type AddProductInput = {
+export type AddProductInputDto = {
     id?: string;
     name: string;
     description: string;
@@ -6,7 +6,7 @@ export type AddProductInput = {
     stock: number;
 }
 
-export type AddProductOutput = {
+export type AddProductOutputDto = {
     id: string;
     name: string;
     description: string;
