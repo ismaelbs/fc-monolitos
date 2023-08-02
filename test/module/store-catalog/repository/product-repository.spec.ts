@@ -1,3 +1,4 @@
+import { Id } from "@app/module/@shared/value-objects/Id";
 import { ProductModel } from "@app/module/store-catalog/repository/product.model";
 import { ProductRepository } from "@app/module/store-catalog/repository/product.repository";
 import { Sequelize } from "sequelize-typescript";
@@ -47,6 +48,26 @@ describe('ProductRepository', () => {
         expect(products[1].name).toBe('Product 2');
         expect(products[1].description).toBe('Product 2 description');
         expect(products[1].salesPrice).toBe(20);
+    })
+
+
+    it('should find one products', async () => {
+        const productRepository = new ProductRepository();
+        const id = uuid();
+
+        await ProductModel.create({
+            id: id,
+            name: 'Product 1',
+            description: 'Product 1 description',
+            salesPrice: 10,
+        });
+
+        const product = await productRepository.find(new Id(id));
+
+        expect(product.id.value).toBe(id);
+        expect(product.name).toBe('Product 1');
+        expect(product.description).toBe('Product 1 description');
+        expect(product.salesPrice).toBe(10);
     })
 
     afterEach(async () => {
