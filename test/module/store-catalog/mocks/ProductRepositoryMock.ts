@@ -16,4 +16,11 @@ export class ProductRepositoryMock {
             salesPrice: 20,
         }),
     ])
+
+    find = vi.fn().mockReturnValue(new Product({
+        id: new Id('1'),
+        name: 'product 1',
+        description: 'description 1',
+        salesPrice: 10,
+    }))
 }
