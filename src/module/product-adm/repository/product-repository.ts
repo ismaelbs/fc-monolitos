@@ -16,8 +16,8 @@ export class ProductRepository implements ProductGateway {
         })
     }
 
-    async find(id: Id): Promise<Product> {
-        const product = await ProductModel.findOne({ where: { id: id.value } });
+    async find(id: string): Promise<Product> {
+        const product = await ProductModel.findOne({ where: { id: id } });
 
         if (!product) {
             throw new Error('Product not found');

@@ -57,7 +57,7 @@ describe('Product Repository', () => {
 
         const productRepository = new ProductRepository();
         await productRepository.add(product);
-        const foundProduct = await productRepository.find(id);
+        const foundProduct = await productRepository.find(id.value);
 
         expect(foundProduct).not.toBeNull();
         expect(productProps.id.value).toEqual(foundProduct?.id.value);
