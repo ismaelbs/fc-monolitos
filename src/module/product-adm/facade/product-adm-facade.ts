@@ -1,5 +1,5 @@
 import { UseCaseInterface } from "../../@shared/usecase/usecase-interface";
-import { AddProductOutputDto, AddProductInputDto } from "../usecases/dtos/add-product-dto";
+import { AddProductOutputDto, AddProductInputDto } from "../usecases/add-products/add-product-dto";
 import ProductAdmFacadeInterface, { AddProductFacadeInputDto } from "./product-adm-facade.interface";
 
 type ProductAdmFacadeProps = {

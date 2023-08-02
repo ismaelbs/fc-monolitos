@@ -1,8 +1,8 @@
-import { UseCaseInterface } from "../../@shared/usecase/usecase-interface";
-import { Id } from "../../@shared/value-objects/Id";
-import { Product } from "../domain/product";
-import { ProductGateway } from "../gateway/product-gateway";
-import { AddProductInputDto, AddProductOutputDto } from "./dtos/add-product-dto";
+import { UseCaseInterface } from "../../../@shared/usecase/usecase-interface";
+import { Id } from "../../../@shared/value-objects/Id";
+import { Product } from "../../domain/product";
+import { ProductGateway } from "../../gateway/product-gateway";
+import { AddProductInputDto, AddProductOutputDto } from "./add-product-dto";
 
 export class AddProductUseCase implements UseCaseInterface<AddProductInputDto, AddProductOutputDto> {
     constructor(private readonly productRepository: ProductGateway) {}
