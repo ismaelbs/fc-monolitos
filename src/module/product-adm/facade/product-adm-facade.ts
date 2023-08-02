@@ -1,18 +1,19 @@
 import { UseCaseInterface } from "../../@shared/usecase/usecase-interface";
 import { AddProductOutputDto, AddProductInputDto } from "../usecases/add-products/add-product-dto";
+import { CheckStockInputDto , CheckStockOutputDto } from "../usecases/check-stock/check-stock-dto";
 import ProductAdmFacadeInterface, { AddProductFacadeInputDto } from "./product-adm-facade.interface";
 
 type ProductAdmFacadeProps = {
-    // checkProductStockUseCase: UseCaseInterface;
+    checkProductStockUseCase: UseCaseInterface<CheckStockInputDto, CheckStockOutputDto>;
     addProductUseCase: UseCaseInterface<AddProductInputDto, AddProductOutputDto>;
 }
 
 export class ProductAdmFacade implements ProductAdmFacadeInterface {
-    // private _checkProductStockUseCase: UseCaseInterface;
+    private _checkProductStockUseCase: UseCaseInterface<CheckStockInputDto, CheckStockOutputDto>;
     private _addProductUseCase: UseCaseInterface<AddProductInputDto, AddProductOutputDto>;
 
     constructor(input: ProductAdmFacadeProps) {
-        // this._checkProductStockUseCase = input.checkProductStockUseCase;
+        this._checkProductStockUseCase = input.checkProductStockUseCase;
         this._addProductUseCase = input.addProductUseCase;
     }
 
@@ -20,7 +21,7 @@ export class ProductAdmFacade implements ProductAdmFacadeInterface {
         await this._addProductUseCase.execute(input);
     }
 
-    // async checkProductStock(input: CheckStockInputDto): Promise<CheckStockOutputDto> {
-    //     return await this._checkProductStockUseCase.execute(input);
-    // }
+    async checkProductStock(input: CheckStockInputDto): Promise<CheckStockOutputDto> {
+        return await this._checkProductStockUseCase.execute(input);
+    }
 }
