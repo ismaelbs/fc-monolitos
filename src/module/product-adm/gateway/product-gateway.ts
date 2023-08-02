@@ -1,4 +1,4 @@
-import { Product } from "../domain/product";
+import { Product } from "@app/module/product-adm/domain/product"
 
 export interface ProductGateway {
     add(product: Product): Promise<void>

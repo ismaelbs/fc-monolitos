@@ -1,6 +1,6 @@
+import { Id } from '@app/module/@shared/value-objects/Id';
+import { CheckProductStockUseCase } from '@app/module/product-adm/usecases/check-stock/check-stock-usecase';
 import { describe, expect, it, vi } from 'vitest'
-import { CheckProductStockUseCase } from '../../../../src/module/product-adm/usecases/check-stock/check-stock-usecase';
-import { Id } from '../../../../src/module/@shared/value-objects/Id';
 
 const ProductRepositoryMock = {
     add: vi.fn(),

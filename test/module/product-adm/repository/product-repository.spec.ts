@@ -1,10 +1,10 @@
+import { Id } from "@app/module/@shared/value-objects/Id";
+import { Product } from "@app/module/product-adm/domain/product";
+import { ProductRepository } from "@app/module/product-adm/repository/product-repository";
+import { ProductModel } from "@app/module/product-adm/repository/product.model"
+
 import { Sequelize } from "sequelize-typescript";
-import { describe, it, beforeEach, expect } from "vitest";
-import { ProductModel } from "../../../../src/module/product-adm/repository/product.model";
-import { Product } from "../../../../src/module/product-adm/domain/product";
-import { ProductRepository } from "../../../../src/module/product-adm/repository/product-repository";
-import { Id } from "../../../../src/module/@shared/value-objects/Id";
-import { afterEach } from "node:test";
+import { describe, it, beforeEach, expect, afterEach } from "vitest";
 let sequelize: Sequelize;
 
 describe('Product Repository', () => {

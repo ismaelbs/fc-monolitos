@@ -1,7 +1,7 @@
-import { UseCaseInterface } from "../../@shared/usecase/usecase-interface";
-import { AddProductOutputDto, AddProductInputDto } from "../usecases/add-products/add-product-dto";
-import { CheckStockInputDto , CheckStockOutputDto } from "../usecases/check-stock/check-stock-dto";
-import ProductAdmFacadeInterface, { AddProductFacadeInputDto } from "./product-adm-facade.interface";
+import { UseCaseInterface } from "@app/module/@shared/usecase/usecase-interface";
+import { AddProductOutputDto, AddProductInputDto } from "@app/module/product-adm/usecases/add-products/add-product-dto";
+import { CheckStockInputDto , CheckStockOutputDto } from "@app/module/product-adm/usecases/check-stock/check-stock-dto";
+import ProductAdmFacadeInterface, { AddProductFacadeInputDto } from "@app/module/product-adm/facade/product-adm-facade.interface";
 
 type ProductAdmFacadeProps = {
     checkProductStockUseCase: UseCaseInterface<CheckStockInputDto, CheckStockOutputDto>;

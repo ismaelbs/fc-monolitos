@@ -1,5 +1,5 @@
+import { AddProductUseCase } from '@app/module/product-adm/usecases/add-products/add-product-usecase';
 import { describe, expect, it, vi } from 'vitest'
-import { AddProductUseCase } from '../../../../src/module/product-adm/usecases/add-products/add-product-usecase';
 
 const ProductRepositoryMock = {
     add: vi.fn(),

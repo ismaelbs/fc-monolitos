@@ -1,6 +1,6 @@
-import { AggregateRoot } from "../../@shared/domain/aggregate-root.interface";
-import { Entity } from "../../@shared/domain/entity";
-import { Id } from "../../@shared/value-objects/Id";
+import { AggregateRoot } from "@app/module/@shared/domain/aggregate-root.interface";
+import { Entity } from "@app/module/@shared/domain/entity";
+import { Id } from "@app/module/@shared/value-objects/Id";
 
 type ProductProps = {
     id: Id;

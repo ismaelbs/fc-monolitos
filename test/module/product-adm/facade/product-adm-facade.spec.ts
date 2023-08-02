@@ -1,11 +1,10 @@
-import { beforeEach, describe, expect, it } from "vitest";
-import { ProductAdmFacadeFactory } from "../../../../src/module/product-adm/factory/product-adm-factory.facade";
-import { ProductModel } from "../../../../src/module/product-adm/repository/product.model";
-import { Id } from "../../../../src/module/@shared/value-objects/Id";
+import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { Sequelize } from "sequelize-typescript";
-import { afterEach } from "node:test";
+import { ProductModel } from "@app/module/product-adm/repository/product.model";
+import { ProductAdmFacadeFactory } from "@app/module/product-adm/factory/product-adm-factory.facade";
+import { Id } from "@app/module/@shared/value-objects/Id";
 
-let sequelize;
+let sequelize: Sequelize;
 describe('ProductAdmFacade', () => {
 
     beforeEach(async () => {

@@ -1,4 +1,4 @@
-import { Id } from "../value-objects/Id";
+import { Id } from "@app/module/@shared/value-objects/Id";
 
 export class Entity {
     private createdAt: Date;
