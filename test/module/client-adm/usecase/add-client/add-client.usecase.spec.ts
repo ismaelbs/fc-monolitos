@@ -1,9 +1,6 @@
 import { AddClientUseCase } from "@app/module/client-adm/usecase/add-client/add-client.usecase";
-import { describe, expect, it, vi } from "vitest";
-
-const clientRepositoryMock = () => ({
-    add: vi.fn()
-})
+import { clientRepositoryMock } from "@test/module/client-adm/mocks/client-repository.mock";
+import { describe, expect, it } from "vitest";
 
 describe("AddClientUseCase", () => {
     it("should add a client", async () => {
