@@ -11,8 +11,8 @@ export class ProductRepository implements ProductGateway {
             description: product.description,
             purchasePrice: product.purchasePrice,
             stock: product.stock,
-            createdAt: product.created_at,
-            updatedAt: product.updated_at,
+            createdAt: product.createdAt,
+            updatedAt: product.createdAt,
         })
     }
 

@@ -15,15 +15,15 @@ export class AddClientUseCase implements UseCaseInterface<AddClientInputUseCaseD
             name: input.name,
             email: input.email,
             address: input.address
-        }, input.id);
+        });
         await this._clientGateway.add(client);
         return {
             id: client.id.value,
             name: client.name,
             email: client.email,
             address: client.address,
-            createdAt: client.created_at,
-            updatedAt: client.updated_at
+            createdAt: client.createdAt,
+            updatedAt: client.updatedAt
         }
     }
 }

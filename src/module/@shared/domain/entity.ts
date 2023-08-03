@@ -1,27 +1,29 @@
 import { Id } from "@app/module/@shared/value-objects/Id";
 
 export class Entity {
-    private createdAt: Date;
-    private updatedAt: Date;
-    constructor(private _id: Id) {
-        this._id = _id;
-        this.createdAt = new Date();
-        this.updatedAt = new Date();
+    private _id: Id;
+    private _createdAt: Date;
+    private _updatedAt: Date;
+
+    constructor(id?: Id, createdAt?: Date, updatedAt?: Date) {
+        this._id = id || new Id();
+        this._createdAt = createdAt || new Date();
+        this._updatedAt = updatedAt || new Date();
     }
 
     get id(): Id {
         return this._id;
     }
 
-    get created_at(): Date {
-        return this.createdAt;
+    get createdAt(): Date {
+        return this._createdAt;
     }
 
-    set created_at(value: Date) {
-        this.createdAt = value;
+    get updatedAt(): Date {
+        return this._updatedAt;
     }
 
-    get updated_at(): Date {
-        return this.updatedAt;
+    set updatedAt(value: Date) {
+        this._updatedAt = value;
     }
 }

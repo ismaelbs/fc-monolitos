@@ -24,8 +24,8 @@ export class AddProductUseCase implements UseCaseInterface<AddProductInputDto, A
             description: product.description,
             purchasePrice: product.purchasePrice,
             stock: product.stock,
-            cretedAt: product.created_at,
-            updatedAt: product.updated_at
+            cretedAt: product.createdAt,
+            updatedAt: product.createdAt
         };
     }
 }

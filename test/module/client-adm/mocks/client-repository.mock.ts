@@ -5,7 +5,7 @@ export const client = new Client({
     name: "John Doe",
     email: "john.doe@example.com",
     address: "Av. Paulista, 1000",
-}, "123");
+});
 
 export const clientRepositoryMock = () => ({
     add: vi.fn(),
