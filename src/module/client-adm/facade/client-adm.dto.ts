@@ -4,7 +4,7 @@ export type AddClientInputFacadeDto = {
     address: string;
 }
 
-export type AddClientOutFacadeDto = {
+export type AddClientOutputFacadeDto = {
     id: string;
     name: string;
     email: string;
