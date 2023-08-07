@@ -38,7 +38,7 @@ export class Transaction extends Entity {
     }
 
     process() {
-        if (this._amount > 100) {
+        if (this._amount >= 100) {
             this.approve();
         } else {
             this.decline();
