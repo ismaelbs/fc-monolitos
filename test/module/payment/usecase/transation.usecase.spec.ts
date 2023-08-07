@@ -1,5 +1,5 @@
 import { Transaction } from "@app/module/payment/domain/transaction";
-import { ProcessPaymentUsecase } from "@app/module/payment/usecase/process-payment.usecase";
+import { ProcessPaymentUsecase } from "@app/module/payment/usecase/process-payment/process-payment.usecase";
 import { describe, expect, it, vi } from "vitest";
 
 const transationAproved = new Transaction({
