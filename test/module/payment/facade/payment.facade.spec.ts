@@ -1,9 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { Sequelize } from "sequelize-typescript";
 import { TransactionModel } from "@app/module/payment/repository/transation.model";
-import { ProcessPaymentUsecase } from "@app/module/payment/usecase/process-payment/process-payment.usecase";
-import { PaymentFacade } from "@app/module/payment/facade/payment.facade";
-import { TransactionRepository } from "@app/module/payment/repository/transation.repository";
+import { PaymentFacadeFactory } from "@app/module/payment/factory/payment-facade.factory";
 
 let sequelize: Sequelize;
 
@@ -21,9 +19,7 @@ describe('Payment Facade', () => {
     });
 
     it('should create a transaction via facade', async () => {
-        const repository = new TransactionRepository();
-        const usecase = new ProcessPaymentUsecase(repository);
-        const facade = new PaymentFacade(usecase);
+        const facade = PaymentFacadeFactory.create();
 
         const output = await facade.process({
             orderId: '123',
