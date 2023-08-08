@@ -30,7 +30,7 @@ export class FindInvoiceUsecase implements UseCaseInterface<FindInvoiceUsecaseIn
                     price: item.price
                 }
             }),
-            total: invoice.items.reduce((total, item) => total + item.price, 0),
+            total: invoice.calculateTotal(),
             createdAt: invoice.createdAt
         }
     }
