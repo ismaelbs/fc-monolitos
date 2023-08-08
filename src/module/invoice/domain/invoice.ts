@@ -1,3 +1,4 @@
+import { AggregateRoot } from "@app/module/@shared/domain/aggregate-root.interface";
 import { Entity } from "@app/module/@shared/domain/entity";
 import { Id } from "@app/module/@shared/value-objects/Id";
 import { Address } from "@app/module/@shared/value-objects/address";
@@ -11,7 +12,7 @@ type InvoiceProps = {
     items?: InvoiceItems[];
 }
 
-export class Invoice extends Entity {
+export class Invoice extends Entity implements AggregateRoot {
     private _name: string
     private _document: string
     private _address: Address
