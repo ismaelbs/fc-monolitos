@@ -1,30 +1,6 @@
 import { UseCaseInterface } from "@app/module/@shared/usecase/usecase-interface";
 import { InvoiceGatewayInterface } from "@app/module/invoice/gateway/invoice.gateway";
-
-type FindInvoiceUsecaseInputDto = {
-    id: string;
-}
-
-type FindInvoiceUsecaseOutputDto = {
-    id: string;
-    name: string;
-    document: string;
-    address: {
-      street: string;
-      number: string;
-      complement: string;
-      city: string;
-      state: string;
-      zipCode: string;
-    };
-    items: {
-      id: string;
-      name: string;
-      price: number;
-    }[];
-    total: number;
-    createdAt: Date;
-}
+import { FindInvoiceUsecaseInputDto, FindInvoiceUsecaseOutputDto } from "@app/module/invoice/usecase/find-invoice/find-invoice.dto";
 
 export class FindInvoiceUsecase implements UseCaseInterface<FindInvoiceUsecaseInputDto, FindInvoiceUsecaseOutputDto> {
     private readonly _invoiceGateway: InvoiceGatewayInterface;
