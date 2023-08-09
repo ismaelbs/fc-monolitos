@@ -10,6 +10,8 @@ type InvoiceProps = {
     document: string;
     address: Address;
     items?: InvoiceItems[];
+    createdAt?: Date;
+    updatedAt?: Date;
 }
 
 export class Invoice extends Entity implements AggregateRoot {
