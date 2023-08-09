@@ -28,6 +28,15 @@ describe('Invoice Repository', () => {
         expect(foundInvoice?.id).toBe(invoice.id.value);
     })
 
+    it('should find an invoice', async () => {
+        const invoiceRepository = new InvoiceRepository();
+        await invoiceRepository.generate(invoice);
+        const foundInvoice = await invoiceRepository.find(invoice.id.value);
+        expect(foundInvoice).not.toBeNull();
+        expect(foundInvoice?.id.value).toBe(invoice.id.value);
+        expect(foundInvoice?.items.length).toBe(invoice.items.length);
+    })
+
     afterEach(async () => {
         await sequelize.close();
     })
