@@ -1,9 +1,6 @@
-import { InvoiceFacade } from "@app/module/invoice/facade/invoice.facade";
+import { InvoiceFacadeFactory } from "@app/module/invoice/factory/invoice-facade.factory";
 import { InvoiceItemModel } from "@app/module/invoice/repository/invoice-item.model";
 import { InvoiceModel } from "@app/module/invoice/repository/invoice.model";
-import { InvoiceRepository } from "@app/module/invoice/repository/invoice.repository";
-import { FindInvoiceUsecase } from "@app/module/invoice/usecase/find-invoice/find-invoice.usecase";
-import { GenerateInvoiceUsecase } from "@app/module/invoice/usecase/generate-invoice/generate-invoice.usecase";
 import { Sequelize } from "sequelize-typescript";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 
@@ -22,13 +19,7 @@ describe('Invoice Facade', () => {
     });
 
     it('should create an invoice and find via facade', async () => {
-        const repository = new InvoiceRepository();
-        const findInvoiceUsecase = new FindInvoiceUsecase(repository);
-        const generateInvoiceUsecase = new GenerateInvoiceUsecase(repository);
-        const invoiceFacade = new InvoiceFacade({
-            findInvoiceUsecase,
-            generateInvoiceUsecase
-        });
+        const invoiceFacade =  InvoiceFacadeFactory.create();
 
         const invoiceGenerated = await invoiceFacade.generate({
             city: 'São Paulo',
